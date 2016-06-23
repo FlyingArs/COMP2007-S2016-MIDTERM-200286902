@@ -1,4 +1,12 @@
-﻿<%@ Page Title="Todo List" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TodoList.aspx.cs" Inherits="COMP2007_S2016_MidTerm_200286902.TodoList" %>
+﻿<%--
+   Authors & Student Number:
+    Siqian Yu 200286902
+   Date Modified: 06-23-2016
+   File Description: This is the page to display the todo list. 
+    
+    --%>
+
+<%@ Page Title="Todo List" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TodoList.aspx.cs" Inherits="COMP2007_S2016_MidTerm_200286902.TodoList" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">

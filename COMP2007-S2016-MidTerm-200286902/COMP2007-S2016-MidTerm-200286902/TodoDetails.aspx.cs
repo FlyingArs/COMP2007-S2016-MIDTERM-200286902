@@ -1,4 +1,10 @@
-﻿using System;
+﻿/** Authors & Student Number:
+    Siqian Yu 200286902
+    Date Modified: 06-23-2016
+    File Description: This is the backend file to edit Todo List. 
+    **/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -39,6 +45,8 @@ namespace COMP2007_S2016_MidTerm_200286902
                 {
                     TodoNameTextBox.Text = updatedTodo.TodoName;
                     TodoNotesTextBox.Text = updatedTodo.TodoNotes;
+                    CheckBox1.Checked = updatedTodo.Completed.Value;        
+
        
                 }
             }
@@ -76,6 +84,7 @@ namespace COMP2007_S2016_MidTerm_200286902
                 //add form data to the new Todo record
                 newTodo.TodoName = TodoNameTextBox.Text;
                 newTodo.TodoNotes = TodoNotesTextBox.Text;
+                newTodo.Completed = CheckBoxChecked;
 
                 //use LINQ to ADO.NET to add / insert new Todo into the database
                 if (TodoID == 0)
@@ -90,6 +99,16 @@ namespace COMP2007_S2016_MidTerm_200286902
                 //Redirect back to the updated Todos page
                 Response.Redirect("~/TodoList.aspx");
             }
+        }
+
+        Boolean CheckBoxChecked;
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBox1.Checked)
+                CheckBoxChecked = true;
+            else
+                CheckBoxChecked = false;
         }
     }
     }
