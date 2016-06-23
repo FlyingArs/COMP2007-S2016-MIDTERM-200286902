@@ -26,7 +26,11 @@ namespace COMP2007_S2016_MidTerm_200286902
                 this.GetTodoList();
             }
         }
-
+        /**
+         * <summary>
+         * This method gets the Todo List
+         * @returns {void}
+         */
         protected void GetTodoList()
         {
             // populate the form with existing Todo data from the db
@@ -51,12 +55,22 @@ namespace COMP2007_S2016_MidTerm_200286902
                 }
             }
         }
+        /**
+        * <summary>
+        * This is the cancel Button
+        * @returns {void}
+        */
 
         protected void CancelButton_Click(object sender, EventArgs e)
         {
             //Redirect to Todo List Page
             Response.Redirect("~/TodoList.aspx");
         }
+        /**
+        * <summary>
+        * This is the the save button
+        * @returns {void}
+        */
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
@@ -102,7 +116,11 @@ namespace COMP2007_S2016_MidTerm_200286902
         }
 
         Boolean CheckBoxChecked;
-
+        /**
+        * <summary>
+        * This is the controller to handle check box
+        * @returns {void}
+        */
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (CheckBox1.Checked)

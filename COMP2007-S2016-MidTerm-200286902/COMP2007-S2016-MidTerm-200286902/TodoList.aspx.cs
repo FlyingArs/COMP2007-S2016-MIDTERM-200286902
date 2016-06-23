@@ -127,7 +127,11 @@ namespace COMP2007_S2016_MidTerm_200286902
             this.GetTodos();
 
         }
-
+        /**
+         * <summary>
+         * This is the sort function
+         * @returns {void}
+         */
         protected void TodoGridView_Sorting(object sender, GridViewSortEventArgs e)
         {
             //get the column to sort by
