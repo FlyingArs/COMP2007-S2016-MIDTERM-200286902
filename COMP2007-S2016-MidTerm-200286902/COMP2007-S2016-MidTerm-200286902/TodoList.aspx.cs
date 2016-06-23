@@ -48,9 +48,9 @@ namespace COMP2007_S2016_MidTerm_200286902
                                 select allTodos);
 
                 //bind the result to the GridView
-                TodosGridView.DataSource = Todos.AsQueryable().OrderBy(SortString).ToList();
+                TodoGridView.DataSource = Todos.AsQueryable().OrderBy(SortString).ToList();
                 //StudentsGridView.DataSource = Students.ToList();
-                TodosGridView.DataBind();
+                TodoGridView.DataBind();
             }
         }
 
@@ -64,13 +64,13 @@ namespace COMP2007_S2016_MidTerm_200286902
          *@param {GridViewDeleteEventArgs} e
          *@returns {void}
          */
-        protected void TodosGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void TodoGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             //store which row was clicked
             int selectedRow = e.RowIndex;
 
             //get the selected TodoID using the Grid's Datakey collection
-            int TodoID = Convert.ToInt32(TodosGridView.DataKeys[selectedRow].Values["TodoID"]);
+            int TodoID = Convert.ToInt32(TodoGridView.DataKeys[selectedRow].Values["TodoID"]);
 
             //use EF to find the selected Todo in the DB and remove it
             using (TodoConnection db = new TodoConnection())
@@ -97,15 +97,15 @@ namespace COMP2007_S2016_MidTerm_200286902
          * This event handler allows pagination to occur for the Todos Page
          *</summary>
          *
-         *@method TodosGridView_PageIndexChanging
+         *@method TodoGridView_PageIndexChanging
          *@param {object} sender
          *@param {GridViewPageEventArgs} e
          *@returns {void}
          */
-        protected void TodosGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void TodoGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             //set the new page number
-            TodosGridView.PageIndex = e.NewPageIndex;
+            TodoGridView.PageIndex = e.NewPageIndex;
 
             //refresh the grid
             this.GetTodos();
@@ -115,14 +115,14 @@ namespace COMP2007_S2016_MidTerm_200286902
         protected void PageSizeDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Set the new Page Size
-            TodosGridView.PageSize = Convert.ToInt32(PageSizeDropDownList.SelectedValue);
+            TodoGridView.PageSize = Convert.ToInt32(PageSizeDropDownList.SelectedValue);
 
             //refresh the grid
             this.GetTodos();
 
         }
 
-        protected void TodosGridView_Sorting(object sender, GridViewSortEventArgs e)
+        protected void TodoGridView_Sorting(object sender, GridViewSortEventArgs e)
         {
             //get the column to sort by
             Session["SortColumn"] = e.SortExpression;
@@ -136,7 +136,7 @@ namespace COMP2007_S2016_MidTerm_200286902
 
         }
 
-        protected void TodosGridView_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void TodoGridView_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (IsPostBack)
             {
@@ -144,9 +144,9 @@ namespace COMP2007_S2016_MidTerm_200286902
                 {
                     LinkButton linkbutton = new LinkButton();
 
-                    for (int index = 0; index < TodosGridView.Columns.Count - 1; index++)
+                    for (int index = 0; index < TodoGridView.Columns.Count - 1; index++)
                     {
-                        if (TodosGridView.Columns[index].SortExpression == Session["SortColumn"].ToString())
+                        if (TodoGridView.Columns[index].SortExpression == Session["SortColumn"].ToString())
                         {
                             if (Session["SortDirection"].ToString() == "ASC")
                             {

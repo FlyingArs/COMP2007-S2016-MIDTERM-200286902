@@ -22,10 +22,10 @@
 
 
                 <asp:GridView runat="server" CssClass="table table-bordered table-stripped talbe-hover"
-                    ID="TodosGridView" AutoGenerateColumns="false" DataKeyNames="TodoID"
-                    OnRowDeleting="TodosGridView_RowDeleting" AllowPaging="true" PageSize="3" 
-                    OnPageIndexChanging="TodosGridView_PageIndexChanging" AllowSorting="true"
-                    OnSorting="TodosGridView_Sorting" OnRowDataBound="TodosGridView_RowDataBound">
+                    ID="TodoGridView" AutoGenerateColumns="false" DataKeyNames="TodoID"
+                    OnRowDeleting="TodoGridView_RowDeleting" AllowPaging="true" PageSize="3" 
+                    OnPageIndexChanging="TodoGridView_PageIndexChanging" AllowSorting="true"
+                    OnSorting="TodoGridView_Sorting" OnRowDataBound="TodoGridView_RowDataBound">
                     <Columns>
                         <asp:BoundField DataField="TodoName" HeaderText="Name" Visible="true" SortExpression="TodoName"/>
                         <asp:BoundField DataField="TodoNotes" HeaderText="Notes" Visible="true" SortExpression="TodoNotes" />

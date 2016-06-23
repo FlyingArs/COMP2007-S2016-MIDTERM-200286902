@@ -22,12 +22,12 @@ namespace COMP2007_S2016_MidTerm_200286902 {
         protected global::System.Web.UI.WebControls.DropDownList PageSizeDropDownList;
         
         /// <summary>
-        /// TodosGridView control.
+        /// TodoGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView TodosGridView;
+        protected global::System.Web.UI.WebControls.GridView TodoGridView;
     }
 }
