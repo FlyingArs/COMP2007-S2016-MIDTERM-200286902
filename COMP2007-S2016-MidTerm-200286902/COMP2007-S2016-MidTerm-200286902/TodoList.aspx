@@ -27,8 +27,8 @@
                     OnPageIndexChanging="TodosGridView_PageIndexChanging" AllowSorting="true"
                     OnSorting="TodosGridView_Sorting" OnRowDataBound="TodosGridView_RowDataBound">
                     <Columns>
-                        <asp:BoundField DataField="TodoName" HeaderText="Todo Name" Visible="true" SortExpression="TodoName"/>
-                        <asp:BoundField DataField="TodoNotes" HeaderText="Todo Notes" Visible="true" SortExpression="TodoNotes" />
+                        <asp:BoundField DataField="TodoName" HeaderText="Name" Visible="true" SortExpression="TodoName"/>
+                        <asp:BoundField DataField="TodoNotes" HeaderText="Notes" Visible="true" SortExpression="TodoNotes" />
 
                         <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i> Edit" 
                             NavigateUrl="~/TodoDetails.aspx.cs" ControlStyle-CssClass="btn btn-primary btn-sm" runat="server"
